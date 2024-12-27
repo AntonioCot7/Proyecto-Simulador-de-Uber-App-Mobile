@@ -1,77 +1,114 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/hyJiSbO7)
-## 🌟 Implementación de Frontend Mobile con React Native 🌟
+# 🚗 **Simulador de Uber - App Móvil** 🚗
 
-En este laboratorio, nos centraremos en la creación de un frontend móvil utilizando React Native. Este se conectará con el backend proporcionado en la entrega anterior. Aquí están los detalles:
+Este es un proyecto de desarrollo de una aplicación móvil que simula la experiencia de Uber. La app está construida con React Native y se conecta a un backend previamente desarrollado para gestionar usuarios y viajes. A continuación, se detallan los aspectos clave de la aplicación móvil.
 
-### 📱 Screens a Implementar
+## 🛠️ **Tecnologías Utilizadas**
 
-1. **Login**: 
-   - Pantalla de inicio de sesión con dos campos de texto para el usuario y la contraseña, y un botón para iniciar sesión.
-   - ⚙️ **Requisito**: Usar el componente `<TextInput />` de `react-native-paper` con `accessibilityLabel` en `username` y `password`.
+- **React Native**: Framework principal para desarrollar la app móvil.
+- **React Navigation**: Para la navegación entre pantallas.
+- **Axios**: Para las solicitudes HTTP al backend.
+- **React Native Paper**: Para los componentes de interfaz de usuario basados en Material Design.
+- **Expo**: Plataforma utilizada para desarrollo y despliegue en dispositivos móviles.
+- **Expo Secure Store**: Para almacenar de manera segura los tokens de autenticación.
 
-2. **Register**: 
-   - Pantalla de registro con tres campos de texto para usuario, contraseña y correo, y un botón para registrarse.
-   - ⚙️ **Requisito**: Usar `<TextInput />` de `react-native-paper` con `accessibilityLabel` en `first-name`, `last-name`, `password`, `email` y `phone`.
+## 🌟 **Características de la Aplicación**
 
-3. **Activity**:
-   - Pantalla que muestra el historial de viajes del usuario con paginación.
-   - ⚙️ **Requisito**: Mostrar historial obtenido del endpoint `GET /ride/user`.
+La aplicación ofrece las siguientes pantallas y funcionalidades esenciales para simular un sistema de transporte tipo Uber:
 
-4. **Profile**:
-   - Pantalla que muestra la información del usuario y permite modificarla, además de cerrar sesión.
-   - ⚙️ **Requisito**: Mostrar información obtenida del endpoint `GET /passenger/me` y un botón de "Cerrar Sesión".
+### 1. **Pantalla de Login**
+   - Permite a los usuarios ingresar con su nombre de usuario y contraseña.
+   - Autenticación con el backend usando el endpoint `POST /auth/login`.
 
-### 📦 Librerías Recomendadas
+### 2. **Pantalla de Registro**
+   - Los nuevos usuarios pueden registrarse proporcionando su nombre, correo electrónico, número de teléfono y contraseña.
+   - Conexión con el backend para crear nuevos usuarios a través del endpoint `POST /auth/register`.
 
-- [**@expo/vector-icons**](https://docs.expo.dev/guides/icons/) y **react-native-icons**: Para agregar íconos.
-- [**react-native-paper**](https://callstack.github.io/react-native-paper/): Para componentes de Material Design. Se recomienda para los componentes de UI.
-- **twrnc**: Para estilos usando Tailwind CSS en React Native. Tambien se puede usar [NativeWind]( https://www.nativewind.dev/)
-- [**@react-navigation/native**](https://reactnavigation.org/docs/getting-started/) y [**@react-navigation/native-stack**](https://reactnavigation.org/docs/native-stack-navigator/): Para la navegación entre pantallas.
-- [**expo-router**](https://docs.expo.dev/router/introduction/): Para la navegación en aplicaciones expo. Usa react navigation por debajo.
-- [**axios**](https://axios-http.com/docs/intro): Obligatorio para peticiones al backend, ya que los tests están basados en esta librería.
-- [**expo-secure-store**](https://docs.expo.dev/versions/latest/sdk/securestore/): Obligatorio para guardar el token de sesión de forma segura.
+### 3. **Pantalla de Actividad**
+   - Muestra el historial de viajes realizados por el usuario.
+   - Se obtiene la información desde el backend usando el endpoint `GET /ride/user`.
 
-### 🛠️ Recomendaciones
+### 4. **Pantalla de Perfil**
+   - El usuario puede ver y editar su información personal, como nombre y correo electrónico.
+   - El backend proporciona esta información a través del endpoint `GET /passenger/me`.
+   - Incluye un botón para cerrar sesión, que eliminará el token de autenticación almacenado en el dispositivo.
 
-- Instalar dependencias del proyecto con `npm install`.
-- Ejecutar el proyecto con `npm start` o `npx expo start`.
-- Recordar que `Expo` no funciona con `localhost` o `127.0.0.1`, deben usar la dirección IP de su máquina para conectar con el backend. Si necesitan ayuda, ejecuten `npx expo start` y en la consola verán la IP:
-  ```
-  > Metro waiting on exp://123.456.78.90:19000
-  ```
-  ![alt text](./media/expo-console.png)
+## 📱 **Pantallas de la Aplicación**
 
-### 📅 Entrega
+### **Login**
 
-#### Login
+La pantalla de login permite al usuario acceder a su cuenta con un nombre de usuario y contraseña.
 
-<div style="display: flex; flex-direction: row; justify-content: center; width: 100%; gap: 20px;">
-  <img src="./media/login-screen.png" alt="Login Screen" width="200"/>
-</div>
+![Login Screen](./media/login-screen.png)
 
-- Los campos deben ser un componente `<TextInput />` de `react-native-paper` con `accessibilityLabel` en `username` y `password`.
+### **Register**
 
-#### Register
+La pantalla de registro permite crear una nueva cuenta con información básica como nombre, correo y teléfono.
 
-<div style="display: flex; flex-direction: row; justify-content: center; width: 100%; gap: 20px;">
-  <img src="./media/register-screen.png" alt="Login Screen" width="200"/>
-</div>
+![Register Screen](./media/register-screen.png)
 
-- Los campos deben ser un componente `<TextInput />` de `react-native-paper` con `accessibilityLabel` en `first-name`, `last-name`, `password`, `email` y `phone`.
+### **Activity**
 
-#### Profile
+Esta pantalla muestra un historial de los viajes previos del usuario, permitiéndole visualizar los detalles de sus desplazamientos.
 
-<div style="display: flex; flex-direction: row; justify-content: center; width: 100%; gap: 20px;">
-  <img src="./media/profile-screen.png" alt="Profile Screen" width="200"/>
-</div>
+![Activity Screen](./media/activity-screen.png)
 
-- Debe contener un botón que permita cerrar sesión con el texto `Cerrar Sesión` para ser reconocido por los test.
-- Debe mostrar la información del usuario obtenida del endpoint `GET /passenger/me`.
+### **Profile**
 
-#### Activity
+En esta pantalla, el usuario puede ver y editar su información personal y cerrar sesión.
 
-<div style="display: flex; flex-direction: row; justify-content: center; width: 100%; gap: 20px;">
-  <img src="./media/activity-screen.png" alt="Activity Screen" width="200"/>
-</div>
+![Profile Screen](./media/profile-screen.png)
 
-- Debe mostrar el historial de viajes del usuario obtenido del endpoint `GET /ride/user`.
+## 📦 **Dependencias**
+
+A continuación, se listan las principales dependencias necesarias para este proyecto:
+
+- **@expo/vector-icons**: Para agregar íconos en la interfaz.
+- **react-native-paper**: Para componentes de UI basados en Material Design.
+- **twrnc**: Para utilizar Tailwind CSS en la parte de los estilos.
+- **react-navigation**: Para la navegación dentro de la aplicación.
+- **axios**: Para hacer solicitudes HTTP al backend.
+- **expo-secure-store**: Para almacenar el token de sesión de manera segura.
+
+## 🚀 **Instrucciones de Instalación y Ejecución**
+
+1. **Clonar el repositorio**:
+
+```bash
+git clone <url_del_repositorio>
+cd <directorio_del_proyecto>
+```
+
+2. **Clonar el repositorio**:
+
+```bash
+npm install
+```
+
+3. **Iniciar la aplicación**:
+
+```bash
+npx expo start
+```
+
+4. **Conectar el backend**:
+   - Para que la aplicación se conecte al backend, asegúrate de que esté ejecutándose en un servidor accesible desde tu dispositivo móvil. Expo no funcionará con `localhost` o `127.0.0.1`, así que utiliza la IP de tu máquina local.
+   - Para obtener la IP, ejecuta `npx expo start` y busca la dirección IP en la consola.
+
+## ⚙️ **Recomendaciones**
+- Asegúrate de tener configurado el backend correctamente para que la aplicación funcione sin problemas.
+- Si utilizas Expo, ten en cuenta que no puedes usar `localhost` o `127.0.0.1` en tu red local. Utiliza la IP de la máquina donde se encuentra el backend.
+
+## 🛠️ **Backend Integrado**
+La app se conecta al siguiente backend para la autenticación de usuarios, gestión de viajes y más:
+- API Base URL: `http://<IP_DEL_BACKEND>:<PUERTO>`
+- Endpoints:
+  - **Login**: `POST /auth/login`
+  - **Register**: `POST /auth/register`
+  - **Historial de viajes**: `GET /ride/user`
+  - **Información del usuario**: `GET /passenger/me`
+
+---
+
+## 📄 **Licencia**
+
+Este proyecto está bajo la licencia MIT. Puedes usarlo, modificarlo y compartirlo libremente.
