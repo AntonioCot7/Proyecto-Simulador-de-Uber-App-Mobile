@@ -38,25 +38,33 @@ La aplicación ofrece las siguientes pantallas y funcionalidades esenciales para
 
 La pantalla de login permite al usuario acceder a su cuenta con un nombre de usuario y contraseña.
 
-![Login Screen](./media/login-screen.png)
+<div style="display: flex; flex-direction: row; justify-content: center; width: 100%; gap: 20px;">
+  <img src="./media/login-screen.png" alt="Login Screen" width="200"/>
+</div>
 
 ### **Register**
 
 La pantalla de registro permite crear una nueva cuenta con información básica como nombre, correo y teléfono.
 
-![Register Screen](./media/register-screen.png)
+<div style="display: flex; flex-direction: row; justify-content: center; width: 100%; gap: 20px;">
+  <img src="./media/register-screen.png" alt="Login Screen" width="200"/>
+</div>
 
 ### **Activity**
 
 Esta pantalla muestra un historial de los viajes previos del usuario, permitiéndole visualizar los detalles de sus desplazamientos.
 
-![Activity Screen](./media/activity-screen.png)
+<div style="display: flex; flex-direction: row; justify-content: center; width: 100%; gap: 20px;">
+  <img src="./media/activity-screen.png" alt="Activity Screen" width="200"/>
+</div>
 
 ### **Profile**
 
 En esta pantalla, el usuario puede ver y editar su información personal y cerrar sesión.
 
-![Profile Screen](./media/profile-screen.png)
+<div style="display: flex; flex-direction: row; justify-content: center; width: 100%; gap: 20px;">
+  <img src="./media/profile-screen.png" alt="Profile Screen" width="200"/>
+</div>
 
 ## 📦 **Dependencias**
 
